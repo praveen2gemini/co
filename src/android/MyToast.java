@@ -11,10 +11,16 @@ public class MyToast extends CordovaPlugin {
 
         if (action.equals("my_toast")) {
 
-            String name = data.getString(0);
-            String message = "MyToast, " + name;
-            callbackContext.success(message);
-
+             final String toastMessage = data.getString(0);
+            cordova.getActivity().runOnUiThread(new Runnable() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+				Toast.makeText(cordova.getActivity(), toastMessage, Toast.LENGTH_SHORT).show();	
+				}
+			});
+			
             return true;
 
         } else {
