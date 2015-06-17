@@ -1,6 +1,6 @@
 # Cordova CustomToast Plugin
 
-Simple plugin that returns your string prefixed with hello.
+Simple plugin that returns your string in Android native Toast message.
 
 Greeting a user with "CustomToast" is something that could be done in JavaScript. This plugin provides a simple example demonstrating how Cordova plugins work.
 
@@ -30,7 +30,7 @@ Edit `www/js/index.js` and add the following code inside `onDeviceReady`
         alert("Error calling in MyToast Plugin");
     }
 
-    hello.greet("World", success, failure);
+    mytoast.my_toast("This is my first toast message!", success, failure);
 ```
 
 Install on Android platform
