@@ -18,7 +18,6 @@ Install the plugin
     $ cd CustomToast
     $ cordova plugin install ../cordova-plugin-mytoast
     
-
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
 
 ```js
