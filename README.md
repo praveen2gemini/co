@@ -1,22 +1,22 @@
-# Cordova Hello World Plugin
+# Cordova CustomToast Plugin
 
 Simple plugin that returns your string prefixed with hello.
 
-Greeting a user with "Hello, world" is something that could be done in JavaScript. This plugin provides a simple example demonstrating how Cordova plugins work.
+Greeting a user with "CustomToast" is something that could be done in JavaScript. This plugin provides a simple example demonstrating how Cordova plugins work.
 
 ## Using
 Clone the plugin
 
-    $ git clone https://github.com/don/cordova-plugin-quit.git
+    $ git clone https://github.com/praveen2gemini/cordova-plugin-mytoast.git
 
 Create a new Cordova Project
 
-    $ cordova create hello com.example.helloapp Hello
+    $ cordova create CustomToast com.custom.CustomToast MyToast
     
 Install the plugin
 
-    $ cd hello
-    $ cordova plugin install ../cordova-plugin-quit
+    $ cd CustomToast
+    $ cordova plugin install ../cordova-plugin-mytoast
     
 
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
