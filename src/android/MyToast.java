@@ -4,6 +4,8 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.widget.Toast;
+
 public class MyToast extends CordovaPlugin {
 
     @Override
