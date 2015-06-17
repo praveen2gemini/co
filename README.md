@@ -1,4 +1,4 @@
-# Cordova QuitMet Plugin
+# Cordova Hello World Plugin
 
 Simple plugin that returns your string prefixed with hello.
 
@@ -7,18 +7,16 @@ Greeting a user with "Hello, world" is something that could be done in JavaScrip
 ## Using
 Clone the plugin
 
-    $ git clone https://github.com/praveen2gemini/cordova-plugin-quit.git
+    $ git clone https://github.com/don/cordova-plugin-hello.git
 
 Create a new Cordova Project
 
-    $ cordova create SampleQuit com.custom.plugin QuitMet
+    $ cordova create hello com.example.helloapp Hello
     
 Install the plugin
 
-    $ cd SampleQuit 
-    $ cordova plugin install ../cordova-plugin-quit
-
-Create a new Cordova Project
+    $ cd hello
+    $ cordova plugin install ../cordova-plugin-hello
     
 
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
@@ -29,7 +27,7 @@ Edit `www/js/index.js` and add the following code inside `onDeviceReady`
     }
 
     var failure = function() {
-        alert("Error calling SampleQuit Plugin");
+        alert("Error calling Hello Plugin");
     }
 
     hello.greet("World", success, failure);

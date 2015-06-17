@@ -1,59 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Licensed to the Apache Software Foundation (ASF) under one
-  or more contributor license agreements.  See the NOTICE file
-  distributed with this work for additional information
-  regarding copyright ownership.  The ASF licenses this file
-  to you under the Apache License, Version 2.0 (the
-  "License"); you may not use this file except in compliance
-  with the License.  You may obtain a copy of the License at
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.hello"
+        version="0.7.0">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+  <name>Hello</name>
 
-  Unless required by applicable law or agreed to in writing,
-  software distributed under the License is distributed on an
-  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  KIND, either express or implied.  See the License for the
-  specific language governing permissions and limitations
-  under the License.
--->
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-id="cordova-plugin-quit"
-    version="1.0.1-dev">
+  <asset src="www/hello.js" target="js/hello.js"/>
 
-    <name>QuitMet</name>
-    <description>Cordova QuitMet Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,QuitMet</keywords>
-    <repo>https://github.com/praveen2gemini/cordova-plugin-quit.git</repo>
-    <issue>https://issues.apache.org/jira/browse/CB/component/12320647</issue>
+  <js-module src="www/hello.js" name="hello">
+    <clobbers target="hello" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Hello">
+        <param name="android-package" value="com.example.plugin.Hello"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+  <platform name="ios">
     
-    <dependency id="cordova-plugin-quit" version=">=2.0.0" />
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
 
-        <js-module src="www/QuitMet.js" name="QuitMet">
-        <clobbers target="window.QuitMet" />
-    </js-module>
-    
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="QuitMet" >
-                <param name="android-package" value="com.custom.plugin.QuitMet"/>
-            </feature>
-        </config-file>
-        
-        <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.RECORD_AUDIO" />
-            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        </config-file>
-        
-        <source-file src="src/android/QuitMet.java" target-dir="src/com/custom/plugin" />
-      
-      
-     </platform>
-     
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
+
 </plugin>
